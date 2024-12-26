@@ -125,6 +125,7 @@ local Data =
                     ["name"] = "Fruit:",
                     ["value"] = "```" ..game.Players.LocalPlayer.Character or game.Players.LocalPlayer.CharacterAdded.."```", 
                     ["inline"] = true
+                }
             },
             ["timestamp"] = os.date("!%Y-%m-%dT%H:%M:%S") -- Thêm thời gian vào đây
         }
