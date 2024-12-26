@@ -14,7 +14,6 @@ LinkLabel.Size = UDim2.new(0, 250, 0, 20) -- Điều chỉnh chiều rộng (250
 LinkLabel.Font = Enum.Font.SourceSans
 LinkLabel.TextColor3 = Color3.new(1, 1, 1)
 LinkLabel.TextSize = 14
-LinkLabel.Text = "Join: dsc.gg/meowx"
 LinkLabel.TextWrapped = true
 LinkLabel.TextScaled = false
 PingLabel.Name = "PingLabel"
@@ -94,12 +93,10 @@ local Data =
 {
     ["embeds"] = {
         {
-            ["title"] = "**Script Auto Nhặt Trái**",  -- Thêm phần tiêu đề vào đây
-            ["url"] = "https://www.roblox.com/users/"..game.Players.LocalPlayer.UserId,
+            ["title"] = "**MENU**",  -- Thêm phần tiêu đề vào đây
             ["description"] = "",  -- Xóa phần hiển thị UserId
             ["color"] = tonumber("0xf7c74b"),
-            ["thumbnail"] = {["url"] = "https://cdn.discordapp.com/attachments/1260040213523333220/1318937828578820106/Screenshot_2024-10-01-10-06-47-767_com.miui.gallery-edit.jpg?ex=67642413&is=6762d293&hm=f4c4c191009ecf925215c52ab2d08f89daa4db03ff2fd0484c57462e58610769&"},
-            ["fields"] = {
+            ["thumbnail"] = {["url"] = "https://cdn2.fptshop.com.vn/unsafe/1920x0/filters:quality(100)/2024_1_5_638400096465392250_cach-choi-blox-fruits-nhu-the-nao-de-khong-bi-khong-giat-lag-va-len-cap-nhanh-tren-roblox-1.jpg
                 {
                     ["name"] = "Name:",
                     ["value"] = "```"..game.Players.LocalPlayer.DisplayName.."```",  -- Thêm tên người chơi vào đây
@@ -108,16 +105,6 @@ local Data =
                 {
                     ["name"] = "Acc:",
                     ["value"] = "```"..game.Players.LocalPlayer.Name.."```",  -- Thêm tên tài khoản vào đây
-                    ["inline"] = true
-                },
-                {
-                    ["name"] = "Execute:",
-                    ["value"] = "```"..ExecutorUsing.."```",
-                    ["inline"] = true
-                },
-                {
-                    ["name"] = "Sea:",
-                    ["value"] = "```" .. CheckSea.."```", 
                     ["inline"] = true
                 }
             },
