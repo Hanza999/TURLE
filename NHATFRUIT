@@ -47,18 +47,6 @@ local function UpdatePing()
         wait(1) -- Cập nhật mỗi giây
     end
 end
- --Hàm kiểm tra và thông báo fruit
-while wait(1) do
-    local fruit = game.Workspace:FindFirstChild("Fruit")  -- Thay "Fruit" bằng tên đúng
-    if fruit then
-        SendWebhookNotification(fruit.Name)
-        game.StarterGui:SetCore("SendNotification", {
-            Title = "Thông Báo",
-            Text = "Đã nhặt được trái: " .. fruit.Name,
-            Duration = 5
-        })
-    end
-end
 -- Hàm cập nhật FPS
 local function UpdateFPS()
     local lastTime = tick()
