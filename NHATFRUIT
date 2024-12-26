@@ -93,7 +93,8 @@ local Data =
 {
     ["embeds"] = {
         {
-            ["title"] = "**MENU**",  -- Thêm phần tiêu đề vào đây
+            ["title"] = "**MENU**",  -- Thêm phần tiêu đề vào đây  
+            ["url"] = "https://www.roblox.com/users/"..game.Players.LocalPlayer.UserId,
             ["description"] = "",  -- Xóa phần hiển thị UserId
             ["color"] = tonumber("0xf7c74b"),
             ["thumbnail"] = {["url"] = "https://cdn2.fptshop.com.vn/unsafe/1920x0/filters:quality(100)/2024_1_5_638400096465392250_cach-choi-blox-fruits-nhu-the-nao-de-khong-bi-khong-giat-lag-va-len-cap-nhanh-tren-roblox-1.jpg
