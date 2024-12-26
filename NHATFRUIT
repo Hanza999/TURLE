@@ -120,7 +120,11 @@ local Data =
                     ["name"] = "Sea:",
                     ["value"] = "```" .. CheckSea.."```", 
                     ["inline"] = true
-                }
+                },
+                {
+                    ["name"] = "Fruit:",
+                    ["value"] = "```" ..game.Players.LocalPlayer.Character or game.Players.LocalPlayer.CharacterAdded.."```", 
+                    ["inline"] = true
             },
             ["timestamp"] = os.date("!%Y-%m-%dT%H:%M:%S") -- Thêm thời gian vào đây
         }
@@ -136,7 +140,7 @@ Request(Final)
  
 -- Thông Báo 
 require(game.ReplicatedStorage:WaitForChild("Notification")).new(
-            " <Color=Green>Turbo Lite — Auto Nhặt Trái<Color=/> "
+            " <Color=Green>Turbo Lucky — Auto Nhặt Trái<Color=/> "
         ):Display()
 -- Thông Báo 
 require(game.ReplicatedStorage:WaitForChild("Notification")).new(
