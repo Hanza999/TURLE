@@ -123,7 +123,7 @@ local Data =
                 },
                 {
                     ["name"] = "Fruit:",
-                    ["value"] = "```" ..game.Players.LocalPlayer.Character or game.Players.LocalPlayer.CharacterAdded.."```", 
+                    ["value"] = "```" .. fruitName.."```", 
                     ["inline"] = true
                 }
             },
