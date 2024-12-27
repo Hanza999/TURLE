@@ -2,10 +2,10 @@ local ScreenGui = Instance.new("ScreenGui")
 local LinkLabel = Instance.new("TextLabel")
 local PingLabel = Instance.new("TextLabel")
 local FPSLabel = Instance.new("TextLabel")
- 
+
 ScreenGui.Name = "PingFPSDisplay"
 ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
- 
+
 LinkLabel.Name = "LinkLabel"
 LinkLabel.Parent = ScreenGui
 LinkLabel.BackgroundTransparency = 1 -- Loại bỏ khung nền
@@ -14,6 +14,7 @@ LinkLabel.Size = UDim2.new(0, 250, 0, 20) -- Điều chỉnh chiều rộng (250
 LinkLabel.Font = Enum.Font.SourceSans
 LinkLabel.TextColor3 = Color3.new(1, 1, 1)
 LinkLabel.TextSize = 14
+LinkLabel.Text = "LUCKY X1000"
 LinkLabel.TextWrapped = true
 LinkLabel.TextScaled = false
 PingLabel.Name = "PingLabel"
@@ -25,7 +26,7 @@ PingLabel.Font = Enum.Font.SourceSans -- Đặt font giống LinkLabel
 PingLabel.TextColor3 = Color3.new(1, 1, 1)
 PingLabel.TextSize = 14 -- Đặt kích thước chữ giống LinkLabel
 PingLabel.Text = "Ping: 0 ms" -- Hiển thị "Ping: 0 ms" mặc định
- 
+
 FPSLabel.Name = "FPSLabel"
 FPSLabel.Parent = ScreenGui
 FPSLabel.BackgroundTransparency = 1 -- Loại bỏ khung nền
@@ -35,7 +36,7 @@ FPSLabel.Font = Enum.Font.SourceSans
 FPSLabel.TextColor3 = Color3.new(1, 1, 1)
 FPSLabel.TextSize = 14
 FPSLabel.Text = "FPS: Calculating..."
- 
+
 -- Hàm cập nhật Ping
 local RunService = game:GetService("RunService")
 local function UpdatePing()
@@ -46,6 +47,7 @@ local function UpdatePing()
         wait(1) -- Cập nhật mỗi giây
     end
 end
+
 -- Hàm cập nhật FPS
 local function UpdateFPS()
     local lastTime = tick()
@@ -60,18 +62,18 @@ local function UpdateFPS()
         RunService.RenderStepped:Wait() -- Cập nhật mỗi frame
     end
 end
- 
+
 -- Chạy các hàm cập nhật
 spawn(UpdatePing)
 spawn(UpdateFPS)
 -- Webhook
 local placeId = game.PlaceId
 local jobId = game.JobId
- 
+
 local sea1 = 2753915549
 local sea2 = 4442272183
 local sea3 = 7449423635
- 
+
 local CheckSea
 if placeId == sea1 then
     CheckSea = "Sea 1"
@@ -82,10 +84,10 @@ elseif placeId == sea3 then
 else
     CheckSea = "unknown sea"
 end
- 
+
 local Players = game:GetService("Players")
 local playerCount = #game:GetService("Players"):GetPlayers()
- 
+
 local hwid = game:GetService("RbxAnalyticsService"):GetClientId()
 local ExecutorUsing = identifyexecutor()
 local HttpService = game:GetService("HttpService")
@@ -93,11 +95,12 @@ local Data =
 {
     ["embeds"] = {
         {
-            ["title"] = "**MENU**",  -- Thêm phần tiêu đề vào đây  
+            ["title"] = "**Script Auto Nhặt Trái**",  -- Thêm phần tiêu đề vào đây
             ["url"] = "https://www.roblox.com/users/"..game.Players.LocalPlayer.UserId,
             ["description"] = "",  -- Xóa phần hiển thị UserId
             ["color"] = tonumber("0xf7c74b"),
-            ["thumbnail"] = {["url"] = "https://cdn2.fptshop.com.vn/unsafe/1920x0/filters:quality(100)/2024_1_5_638400096465392250_cach-choi-blox-fruits-nhu-the-nao-de-khong-bi-khong-giat-lag-va-len-cap-nhanh-tren-roblox-1.jpg
+            ["thumbnail"] = {["url"] = "https://cdn.discordapp.com/attachments/1260040213523333220/1318937828578820106/Screenshot_2024-10-01-10-06-47-767_com.miui.gallery-edit.jpg?ex=67642413&is=6762d293&hm=f4c4c191009ecf925215c52ab2d08f89daa4db03ff2fd0484c57462e58610769&"},
+            ["fields"] = {
                 {
                     ["name"] = "Name:",
                     ["value"] = "```"..game.Players.LocalPlayer.DisplayName.."```",  -- Thêm tên người chơi vào đây
@@ -109,8 +112,13 @@ local Data =
                     ["inline"] = true
                 },
                 {
+                    ["name"] = "Execute:",
+                    ["value"] = "```"..ExecutorUsing.."```",
+                    ["inline"] = true
+                },
+                {
                     ["name"] = "Sea:",
-                    ["value"] = "```" .. CheckSea.."```",
+                    ["value"] = "```" .. CheckSea.."```", 
                     ["inline"] = true
                 }
             },
@@ -118,17 +126,17 @@ local Data =
         }
     }
 }
- 
+
 local Headers = {["Content-Type"] = "application/json"}
 local Encoded = HttpService:JSONEncode(Data)
- 
+
 local Request = http_request or request or HttpPost or syn.request
-local Final = {Url = "https://discord.com/api/webhooks/1321372349127200809/R3hU2uceI2GvaF70MJZGyLUAm8DDl_OibtBvvSbiY_s-tqQz1oiin4rnB6wSyYwF63hG", Body = Encoded, Method = "POST", Headers = Headers}
+local Final = {Url = "https://discordapp.com/api/webhooks/1321372349127200809/R3hU2uceI2GvaF70MJZGyLUAm8DDl_OibtBvvSbiY_s-tqQz1oiin4rnB6wSyYwF63hG", Body = Encoded, Method = "POST", Headers = Headers}
 Request(Final)
- 
+
 -- Thông Báo 
 require(game.ReplicatedStorage:WaitForChild("Notification")).new(
-            " <Color=Green>Turbo Lucky — Auto Nhặt Trái<Color=/> "
+            " <Color=Green>Turbo Lite — Auto Nhặt Trái<Color=/> "
         ):Display()
 -- Thông Báo 
 require(game.ReplicatedStorage:WaitForChild("Notification")).new(
@@ -138,16 +146,16 @@ require(game.ReplicatedStorage:WaitForChild("Notification")).new(
 local function round(n)
     return math.floor(tonumber(n) + 0.5)
 end
- 
+
 local Number = math.random(1, 1000000)
 local DevilFruitESP = true
 local isVietnamese = true -- Đặt `false` nếu người dùng là nước ngoài
- 
+
 -- Hàm kiểm tra nil
 local function isnil(value)
     return value == nil
 end
- 
+
 function UpdateDevilChams()
     for _, v in pairs(game.Workspace:GetChildren()) do
         pcall(function()
@@ -161,7 +169,7 @@ function UpdateDevilChams()
                         bill.Size = UDim2.new(1, 200, 1, 30)
                         bill.Adornee = v.Handle
                         bill.AlwaysOnTop = true
- 
+
                         local name = Instance.new('TextLabel', bill)
                         name.Font = Enum.Font.GothamSemibold
                         name.FontSize = Enum.FontSize.Size14
@@ -188,20 +196,20 @@ function UpdateDevilChams()
         end)
     end
 end
- 
+
 -- Tự động cập nhật ESP cho trái cây
 spawn(function()
     while wait(1) do
         UpdateDevilChams()
     end
 end)
- 
+
 -- Mã gốc của bạn, với chức năng nhặt trái cây và thông báo:
 repeat
     wait()
 until game.IsLoaded and (game.Players.LocalPlayer or game.Players.PlayerAdded:Wait()) and
     (game.Players.LocalPlayer.Character or game.Players.LocalPlayer.CharacterAdded:Wait())
- 
+
 game.Players.LocalPlayer.Idled:connect(
     function()
         while wait(3) do
@@ -213,7 +221,7 @@ game.Players.LocalPlayer.Idled:connect(
         end
     end
 )
- 
+
 local a = game.Players.LocalPlayer
 local b = a.Character
 local c = game.TweenService
@@ -225,14 +233,14 @@ local e = Instance.new("BodyAngularVelocity")
 e.AngularVelocity = Vector3.new()
 e.MaxTorque = Vector3.new(1 / 0, 1 / 0, 1 / 0)
 e.Name = "bAV"
- 
+
 -- Kiểm tra xem có trái cây không
 local fruitsFound = false  -- Biến kiểm tra xem có trái cây hay không
- 
+
 for f, f in next, workspace:GetChildren() do
     if f.Name:find("Fruit") and (f:IsA("Tool") or f:IsA("Model")) then
         fruitsFound = true  -- Đã tìm thấy trái cây
- 
+        
         -- Thông báo "Đang đi nhặt trái"
         game.StarterGui:SetCore(
             "SendNotification",
@@ -242,7 +250,7 @@ for f, f in next, workspace:GetChildren() do
                 Duration = 10
             }
         )
- 
+        
         repeat
             local d = d:Clone()
             d.Parent = b.HumanoidRootPart
@@ -262,7 +270,7 @@ for f, f in next, workspace:GetChildren() do
             wait(1)
         until f.Parent ~= workspace
         wait(1)
- 
+
         -- Thông báo khi đã nhặt trái
         game.StarterGui:SetCore(
             "SendNotification",
@@ -272,7 +280,7 @@ for f, f in next, workspace:GetChildren() do
                 Duration = 10
             }
         )
- 
+
         local a =
             b:FindFirstChildOfClass("Tool") and b:FindFirstChildOfClass("Tool").Name:find("Fruit") and
             b:FindFirstChildOfClass("Tool") or
@@ -283,7 +291,7 @@ for f, f in next, workspace:GetChildren() do
                     end
                 end
             end)()
- 
+        
         game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(
             "StoreFruit",
             a:GetAttribute("OriginalName"),
@@ -291,7 +299,7 @@ for f, f in next, workspace:GetChildren() do
         )
     end
 end
- 
+
 -- Nếu không có trái cây, thông báo "Không tìm thấy trái trong server"
 if not fruitsFound then
     game.StarterGui:SetCore(
@@ -303,10 +311,10 @@ if not fruitsFound then
         }
     )
 end
- 
+
 -- Thông báo đổi server (hiện một lần)
 local serverHopNotified = false  -- Biến kiểm tra đã thông báo chưa
- 
+
 local a = game.JobId
 repeat
     task.spawn(
@@ -399,7 +407,7 @@ repeat
                     )
                 end
             end
- 
+
             -- Kiểm tra và thông báo chỉ một lần khi đổi server
             if not serverHopNotified then
                 game.StarterGui:SetCore(
@@ -412,7 +420,7 @@ repeat
                 )
                 serverHopNotified = true  -- Đánh dấu là đã thông báo
             end
- 
+
             Teleport()
         end
     )
