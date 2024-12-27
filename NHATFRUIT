@@ -1,3 +1,4 @@
+
 local ScreenGui = Instance.new("ScreenGui")
 local LinkLabel = Instance.new("TextLabel")
 local PingLabel = Instance.new("TextLabel")
@@ -14,7 +15,7 @@ LinkLabel.Size = UDim2.new(0, 250, 0, 20) -- Điều chỉnh chiều rộng (250
 LinkLabel.Font = Enum.Font.SourceSans
 LinkLabel.TextColor3 = Color3.new(1, 1, 1)
 LinkLabel.TextSize = 14
-LinkLabel.Text = "LUCKY X1000"
+LinkLabel.Text = "Join: dsc.gg/meowx"
 LinkLabel.TextWrapped = true
 LinkLabel.TextScaled = false
 PingLabel.Name = "PingLabel"
@@ -119,11 +120,6 @@ local Data =
                 {
                     ["name"] = "Sea:",
                     ["value"] = "```" .. CheckSea.."```", 
-                    ["inline"] = true
-                },
-                {
-                    ["name"] = "Sea:",
-                    ["value"] = "```" .. fruitsFound.."```", 
                     ["inline"] = true
                 }
             },
