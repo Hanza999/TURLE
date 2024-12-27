@@ -120,6 +120,11 @@ local Data =
                     ["name"] = "Sea:",
                     ["value"] = "```" .. CheckSea.."```", 
                     ["inline"] = true
+                },
+                {
+                    ["name"] = "Sea:",
+                    ["value"] = "```" .. fruitsFound.."```", 
+                    ["inline"] = true
                 }
             },
             ["timestamp"] = os.date("!%Y-%m-%dT%H:%M:%S") -- Thêm thời gian vào đây
